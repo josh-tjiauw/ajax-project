@@ -1,0 +1,17 @@
+nav{
+  background-color: gray;
+  height: 75px;
+  position: relative;
+}
+
+#home-button{
+  position: absolute;
+  top: 1.5rem;
+  right: 6rem;
+}
+
+#favorites-button{
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+}

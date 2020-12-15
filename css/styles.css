@@ -36,3 +36,17 @@ nav{
   font-family: 'Balsamiq Sans', cursive;
   font-size: 16px;
 }
+
+.row{
+  display: flex;
+  margin: 2rem auto;
+}
+
+.col-fourth {
+  width: 25%;
+  margin: 0.25rem;
+}
+
+.col-fourth img{
+  width: 100%;
+}

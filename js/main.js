@@ -7,5 +7,7 @@ function getMovie(name) {
     console.log(xhr.response);
   })
   xhr.send();
+
 }
-getMovie('Avengers%3A+Infinity+War');
+
+getMovie('Avengers: Infinity War');

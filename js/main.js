@@ -1,5 +1,6 @@
-var numMovie = 1;
+var numMovie = 0;
 var arrayOfMovies = ['Avengers: Infinity War', 'Tenet', 'Underwater', 'Terminator 2: Judgment Day'];
+var arrayAction = [];
 function getMovie(name) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://www.omdbapi.com/?t=' + name + '&apikey=6bc8c31e');
@@ -13,11 +14,18 @@ function getMovie(name) {
     movie.genre = xhr.response.Genre;
     movie.actors = xhr.response.Actors;
     movie.description = xhr.response.Plot;
+    if (xhr.response.Genre.includes('Action')){
+      arrayAction.push(xhr.response);
+    }
   })
 }
 
-getMovie('Avengers: Infinity War')
-console.log(movie);
+for(var i=0; i<arrayOfMovies.length; i++){
+  getMovie(arrayOfMovies[i]);
+  numMovie++;
+}
+console.log(arrayAction);
+console.log(numMovie);
 
 var previousDataJSON = localStorage.getItem('movie');
 if (previousDataJSON !== null) {

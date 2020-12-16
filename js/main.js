@@ -18,3 +18,14 @@ function getMovie(name) {
 
 getMovie('Avengers: Infinity War')
 console.log(movie);
+
+var previousDataJSON = localStorage.getItem('movie');
+if (previousDataJSON !== null) {
+  movie = JSON.parse(previousDataJSON);
+}
+
+window.addEventListener('beforeunload', function (event) {
+  event.preventDefault();
+  var movieJSON = JSON.stringify(movie);
+  localStorage.setItem('movie', movieJSON);
+})

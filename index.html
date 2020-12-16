@@ -15,9 +15,18 @@
     <button data-view='home' id='home-button'>Home</button>
     <button data-view='favorites' id='favorites-button'>Favorites</button>
   </nav>
-
   <div class="container">
-    <div data-view="home" class="view">
+    <div data-view="login" class="view">
+      <div class="center">
+        <form id='login-info'>
+          <label for="user-name" class="header-text">Enter your name:</label>
+          <input type="text" id="user-name">
+          <input type="submit" value="Submit" id="submit-name">
+        </form>
+      </div>
+    </div>
+
+    <div data-view="home" class="view hidden">
       <h1 class="header-text" id='greeting'>
         Hello Josh!<br>
       </h1>

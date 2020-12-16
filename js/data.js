@@ -1,10 +1,14 @@
 /* exported data */
-var movie = {
-  title: '',
-  year: '',
-  ratings: '',
-  length: '',
-  genre: '',
-  actors: '',
-  description: ''
+var data = {
+  username: '',
+  dataview: '',
+  movie: {
+    title: '',
+    year: '',
+    ratings: '',
+    length: '',
+    genre: '',
+    actors: '',
+    description: ''
+  },
 }

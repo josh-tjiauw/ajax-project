@@ -1,19 +1,48 @@
+var $viewNodeList = document.querySelectorAll('.view');
+var $username = document.getElementById('user-name');
 var numMovie = 0;
 var arrayOfMovies = ['Avengers: Infinity War', 'Tenet', 'Underwater', 'Terminator 2: Judgment Day'];
 var arrayAction = [];
+var $form = document.getElementById('login-info');
+var $username = document.getElementById('user-name');
+
+$form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  data.username = $username.value;
+  $form.reset();
+  viewSwap('home')
+})
+var $dataViewNodeList = [];
+for (i = 0; i < $viewNodeList.length; i++) {
+  var dvnode = $viewNodeList[i].getAttribute('data-view');
+  $dataViewNodeList.push(dvnode);
+}
+
+function viewSwap(dataview) {
+  for (i = 0; i < $viewNodeList.length; i++) {
+    if (dataview !== $dataViewNodeList[i]) {
+      $viewNodeList[i].className = 'view hidden';
+    }
+    else {
+      $viewNodeList[i].className = 'view';
+      data['view'] = $dataViewNodeList[i];
+    }
+  }
+}
+
 function getMovie(name) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://www.omdbapi.com/?t=' + name + '&apikey=6bc8c31e');
   xhr.responseType = 'json';
   xhr.send();
   xhr.addEventListener('load', function () {
-    movie.title = xhr.response.Title;
-    movie.year = xhr.response.Year;
-    movie.ratings = xhr.response.Ratings[0];
-    movie.length = xhr.response.Runtime;
-    movie.genre = xhr.response.Genre;
-    movie.actors = xhr.response.Actors;
-    movie.description = xhr.response.Plot;
+    data.movie.title = xhr.response.Title;
+    data.movie.year = xhr.response.Year;
+    data.movie.ratings = xhr.response.Ratings[0];
+    data.movie.length = xhr.response.Runtime;
+    data.movie.genre = xhr.response.Genre;
+    data.movie.actors = xhr.response.Actors;
+    data.movie.description = xhr.response.Plot;
     if (xhr.response.Genre.includes('Action')){
       arrayAction.push(xhr.response);
     }

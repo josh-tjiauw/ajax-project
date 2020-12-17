@@ -11,4 +11,5 @@ var data = {
     actors: '',
     description: ''
   },
-}
+  favorites: []
+};

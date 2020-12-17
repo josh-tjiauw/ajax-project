@@ -36,10 +36,10 @@ function viewSwap(dataview) {
 }
 
 document.addEventListener('click', function (event) {
-  if (event.target.nodeName === 'BUTTON') {
+  if (event.target.nodeName === 'BUTTON' && event.target.id === 'home-button' || event.target.id === 'favorites-button') {
     viewSwap(event.target.getAttribute('data-view'));
   }
-  else if (event.target.nodeName === 'IMG' && data.view === 'home') {
+  else if (event.target.nodeName === 'IMG' && data.view === 'home' || data.view === 'favorites') {
     viewSwap(event.target.getAttribute('data-view'));
   }
   else {
@@ -59,7 +59,23 @@ function getMovie(name) {
     var $movieTitle = document.createElement('h1');
     var $movieRatings = document.createElement('h2');
     var $movieLength = document.createElement('h2');
-    var $movieDescription = document.createElement('p')
+    var $movieDescription = document.createElement('p');
+    var $favButtonContainer = document.createElement('div');
+    var $addToFavorites = document.createElement('button');
+    var $removeFromFavorites = document.createElement('button')
+
+    $addToFavorites.addEventListener('click', function(){
+      data.favorites.push(xhr.response.Title);
+      $addToFavorites.className = 'hidden';
+      $removeFromFavorites.className = 'subheader-text';
+    })
+
+    $removeFromFavorites.addEventListener('click', function(){
+
+      $addToFavorites.className = 'subheader-text';
+      $removeFromFavorites.className = 'hidden';
+    })
+
     $movieDescription.className = 'subheader-text';
     $movieDescription.innerHTML = xhr.response.Plot;
     $movieLength.className = 'subheader-text';
@@ -70,12 +86,22 @@ function getMovie(name) {
     $movieRatings.innerHTML = 'Ratings: ' + xhr.response.Ratings[0].Value;
     $movieImgContainer.className = 'movie-poster';
     $movieImg.src = xhr.response.Poster;
+    $favButtonContainer.className = 'favButtonContainer'
+    $addToFavorites.className = 'subheader-text';
+    $addToFavorites.id = 'add-to-favorites-button';
+    $addToFavorites.textContent = 'Add to Favorites';
+    $removeFromFavorites.className = 'subheader-text hidden';
+    $removeFromFavorites.id = 'remove-from-favorites-button';
+    $removeFromFavorites.textContent = 'Remove From Favorites';
     $movieImgContainer.appendChild($movieImg);
     $movieContainer.appendChild($movieImgContainer);
     $movieContainer.appendChild($movieTitle);
     $movieContainer.appendChild($movieRatings);
     $movieContainer.appendChild($movieLength);
     $movieContainer.appendChild($movieDescription);
+    $favButtonContainer.appendChild($addToFavorites);
+    $favButtonContainer.append($removeFromFavorites);
+    $movieContainer.appendChild($favButtonContainer);
 
     data.movie.title = xhr.response.Title;
     data.movie.year = xhr.response.Year;
@@ -84,7 +110,7 @@ function getMovie(name) {
     data.movie.genre = xhr.response.Genre;
     data.movie.actors = xhr.response.Actors;
     data.movie.description = xhr.response.Plot;
-    if (xhr.response.Genre.includes('Action')){
+    if (xhr.response.Genre.includes('Action')) {
       arrayAction.push(xhr.response);
       display('action');
     }

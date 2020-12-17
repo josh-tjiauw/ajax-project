@@ -46,7 +46,7 @@ document.addEventListener('click', function (event) {
     return;
   }
 })
-console.log($container);
+
 function getMovie(name) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://www.omdbapi.com/?t=' + name + '&apikey=6bc8c31e');
@@ -105,7 +105,6 @@ function display(genre) {
       $colfourthimg.setAttributeNode($dataview);
       $colfourth.appendChild($colfourthimg);
       $action.appendChild($colfourth);
-      console.log($container)
     }
     numMovie++;
   }

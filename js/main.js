@@ -36,7 +36,7 @@ function viewSwap(dataview) {
 }
 
 document.addEventListener('click', function (event) {
-  if (event.target.nodeName === 'BUTTON' && data.view === 'home' || data.view === 'favorites') {
+  if (event.target.nodeName === 'BUTTON' && event.target.id === 'home-button' || event.target.id === 'favorites-button') {
     viewSwap(event.target.getAttribute('data-view'));
   }
   else if (event.target.nodeName === 'IMG' && data.view === 'home' || data.view === 'favorites') {
@@ -70,7 +70,11 @@ function getMovie(name) {
       $removeFromFavorites.className = 'subheader-text';
     })
 
+    $removeFromFavorites.addEventListener('click', function(){
 
+      $addToFavorites.className = 'subheader-text';
+      $removeFromFavorites.className = 'hidden';
+    })
 
     $movieDescription.className = 'subheader-text';
     $movieDescription.innerHTML = xhr.response.Plot;

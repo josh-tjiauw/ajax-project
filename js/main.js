@@ -65,6 +65,9 @@ function display(genre) {
       var $colfourthimg = document.createElement('img');
       $colfourthimg.src = arrayAction[i].Poster;
       $colfourthimg.alt = arrayAction[i].Title + ' Poster';
+      var $dataview = document.createAttribute('data-view');
+      $dataview.value = arrayAction[i];
+      $colfourthimg.setAttributeNode($dataview);
 
       $colfourth.appendChild($colfourthimg);
       $action.appendChild($colfourth);
@@ -79,7 +82,7 @@ getMovie(arrayOfMovies[2]);
 getMovie(arrayOfMovies[3]);
 
 document.addEventListener('click', function(event){
-  if(event.target.nodeName === 'BUTTON'){
+  if (event.target.nodeName === 'BUTTON' || event.target.nodeName === 'IMG'){
     viewSwap(event.target.getAttribute('data-view'));
   }
 })

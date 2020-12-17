@@ -36,8 +36,14 @@ function viewSwap(dataview) {
 }
 
 document.addEventListener('click', function (event) {
-  if (event.target.nodeName === 'BUTTON' || event.target.nodeName === 'IMG') {
+  if (event.target.nodeName === 'BUTTON') {
     viewSwap(event.target.getAttribute('data-view'));
+  }
+  else if (event.target.nodeName === 'IMG' && data.view === 'home') {
+    viewSwap(event.target.getAttribute('data-view'));
+  }
+  else {
+    return;
   }
 })
 console.log($container);

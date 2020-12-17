@@ -1,4 +1,4 @@
-var $viewNodeList = document.querySelectorAll('.view');
+var $viewNodeList = document.getElementsByClassName('view');
 var $username = document.getElementById('user-name');
 var $greeting = document.getElementById('greeting')
 var numMovie = 0;
@@ -6,6 +6,7 @@ var arrayOfMovies = ['Avengers: Infinity War', 'Tenet', 'Underwater', 'Terminato
 var arrayAction = [];
 var $form = document.querySelector('form');
 var $action = document.getElementById('action-genre');
+var $container = document.querySelector('.container');
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -34,12 +35,23 @@ function viewSwap(dataview) {
   }
 }
 
+document.addEventListener('click', function (event) {
+  if (event.target.nodeName === 'BUTTON' || event.target.nodeName === 'IMG') {
+    viewSwap(event.target.getAttribute('data-view'));
+  }
+})
+console.log($container);
 function getMovie(name) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://www.omdbapi.com/?t=' + name + '&apikey=6bc8c31e');
   xhr.responseType = 'json';
   xhr.send();
   xhr.addEventListener('load', function () {
+    var $movieContainer = document.getElementById(xhr.response.imdbID);
+    var $movieImg = document.createElement('img');
+    $movieImg.src = xhr.response.Poster;
+    $movieContainer.appendChild($movieImg);
+
     data.movie.title = xhr.response.Title;
     data.movie.year = xhr.response.Year;
     data.movie.ratings = xhr.response.Ratings[0];
@@ -66,9 +78,9 @@ function display(genre) {
       var $dataview = document.createAttribute('data-view');
       $dataview.value = arrayAction[i].imdbID;
       $colfourthimg.setAttributeNode($dataview);
-      console.log($colfourthimg);
       $colfourth.appendChild($colfourthimg);
       $action.appendChild($colfourth);
+      console.log($container)
     }
     numMovie++;
   }
@@ -78,13 +90,6 @@ getMovie(arrayOfMovies[0]);
 getMovie(arrayOfMovies[1]);
 getMovie(arrayOfMovies[2]);
 getMovie(arrayOfMovies[3]);
-
-document.addEventListener('click', function(event){
-  if (event.target.nodeName === 'BUTTON' || event.target.nodeName === 'IMG'){
-    viewSwap(event.target.getAttribute('data-view'));
-  }
-})
-
 
 var previousDataJSON = localStorage.getItem('data');
 if (previousDataJSON !== null) {

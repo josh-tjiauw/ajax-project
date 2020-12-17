@@ -83,3 +83,7 @@ nav{
   border-radius: 5px;
   background-color: white;
 }
+
+.movie-poster {
+  width: 100%;
+}

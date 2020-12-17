@@ -58,6 +58,10 @@ function getMovie(name) {
     var $movieImgContainer = document.createElement('div');
     var $movieTitle = document.createElement('h1');
     var $movieRatings = document.createElement('h2');
+    var $movieLength = document.createElement('h2');
+    var $movieDescription = document.createElement('p')
+    $movieDescription.innerHTML = xhr.response.Plot;
+    $movieLength.innerHTML = xhr.response.Runtime;
     $movieTitle.innerHTML = xhr.response.Title;
     $movieRatings.innerHTML = 'Ratings: ' + xhr.response.Ratings[0].Value;
     $movieImgContainer.className = 'movie-poster';
@@ -66,6 +70,8 @@ function getMovie(name) {
     $movieContainer.appendChild($movieImgContainer);
     $movieContainer.appendChild($movieTitle);
     $movieContainer.appendChild($movieRatings);
+    $movieContainer.appendChild($movieLength);
+    $movieContainer.appendChild($movieDescription);
 
     data.movie.title = xhr.response.Title;
     data.movie.year = xhr.response.Year;

@@ -60,9 +60,13 @@ function getMovie(name) {
     var $movieRatings = document.createElement('h2');
     var $movieLength = document.createElement('h2');
     var $movieDescription = document.createElement('p')
+    $movieDescription.className = 'subheader-text';
     $movieDescription.innerHTML = xhr.response.Plot;
+    $movieLength.className = 'subheader-text';
     $movieLength.innerHTML = xhr.response.Runtime;
+    $movieTitle.className = 'header-text';
     $movieTitle.innerHTML = xhr.response.Title;
+    $movieRatings.className = 'subheader-text';
     $movieRatings.innerHTML = 'Ratings: ' + xhr.response.Ratings[0].Value;
     $movieImgContainer.className = 'movie-poster';
     $movieImg.src = xhr.response.Poster;

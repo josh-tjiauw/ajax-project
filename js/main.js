@@ -78,6 +78,12 @@ getMovie(arrayOfMovies[1]);
 getMovie(arrayOfMovies[2]);
 getMovie(arrayOfMovies[3]);
 
+document.addEventListener('click', function(event){
+  if(event.target.nodeName === 'BUTTON'){
+    viewSwap(event.target.getAttribute('data-view'));
+  }
+})
+
 
 var previousDataJSON = localStorage.getItem('data');
 if (previousDataJSON !== null) {

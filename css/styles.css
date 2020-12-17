@@ -83,3 +83,12 @@ nav{
   border-radius: 5px;
   background-color: white;
 }
+
+.movie-poster {
+  display: flex;
+  justify-content: center;
+}
+
+.movie-poster > img {
+  width: 100%;
+}

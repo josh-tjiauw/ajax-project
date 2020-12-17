@@ -1,7 +1,7 @@
 /* exported data */
 var data = {
   username: '',
-  dataview: '',
+  view: '',
   movie: {
     title: '',
     year: '',

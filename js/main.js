@@ -1,4 +1,4 @@
-var $viewNodeList = document.querySelectorAll('.view');
+var $viewNodeList = document.getElementsByClassName('view');
 var $username = document.getElementById('user-name');
 var $greeting = document.getElementById('greeting')
 var numMovie = 0;
@@ -6,6 +6,7 @@ var arrayOfMovies = ['Avengers: Infinity War', 'Tenet', 'Underwater', 'Terminato
 var arrayAction = [];
 var $form = document.querySelector('form');
 var $action = document.getElementById('action-genre');
+var $container = document.querySelector('.container');
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -34,12 +35,48 @@ function viewSwap(dataview) {
   }
 }
 
+document.addEventListener('click', function (event) {
+  if (event.target.nodeName === 'BUTTON') {
+    viewSwap(event.target.getAttribute('data-view'));
+  }
+  else if (event.target.nodeName === 'IMG' && data.view === 'home') {
+    viewSwap(event.target.getAttribute('data-view'));
+  }
+  else {
+    return;
+  }
+})
+
 function getMovie(name) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://www.omdbapi.com/?t=' + name + '&apikey=6bc8c31e');
   xhr.responseType = 'json';
   xhr.send();
   xhr.addEventListener('load', function () {
+    var $movieContainer = document.getElementById(xhr.response.imdbID);
+    var $movieImg = document.createElement('img');
+    var $movieImgContainer = document.createElement('div');
+    var $movieTitle = document.createElement('h1');
+    var $movieRatings = document.createElement('h2');
+    var $movieLength = document.createElement('h2');
+    var $movieDescription = document.createElement('p')
+    $movieDescription.className = 'subheader-text';
+    $movieDescription.innerHTML = xhr.response.Plot;
+    $movieLength.className = 'subheader-text';
+    $movieLength.innerHTML = xhr.response.Runtime;
+    $movieTitle.className = 'header-text';
+    $movieTitle.innerHTML = xhr.response.Title;
+    $movieRatings.className = 'subheader-text';
+    $movieRatings.innerHTML = 'Ratings: ' + xhr.response.Ratings[0].Value;
+    $movieImgContainer.className = 'movie-poster';
+    $movieImg.src = xhr.response.Poster;
+    $movieImgContainer.appendChild($movieImg);
+    $movieContainer.appendChild($movieImgContainer);
+    $movieContainer.appendChild($movieTitle);
+    $movieContainer.appendChild($movieRatings);
+    $movieContainer.appendChild($movieLength);
+    $movieContainer.appendChild($movieDescription);
+
     data.movie.title = xhr.response.Title;
     data.movie.year = xhr.response.Year;
     data.movie.ratings = xhr.response.Ratings[0];
@@ -51,8 +88,6 @@ function getMovie(name) {
       arrayAction.push(xhr.response);
       display('action');
     }
-    console.log('val of arrayAction', arrayAction);
-    console.log('val of arrayAction[0]:', arrayAction[0].Poster)
   })
 }
 
@@ -65,7 +100,9 @@ function display(genre) {
       var $colfourthimg = document.createElement('img');
       $colfourthimg.src = arrayAction[i].Poster;
       $colfourthimg.alt = arrayAction[i].Title + ' Poster';
-
+      var $dataview = document.createAttribute('data-view');
+      $dataview.value = arrayAction[i].imdbID;
+      $colfourthimg.setAttributeNode($dataview);
       $colfourth.appendChild($colfourthimg);
       $action.appendChild($colfourth);
     }
@@ -77,7 +114,6 @@ getMovie(arrayOfMovies[0]);
 getMovie(arrayOfMovies[1]);
 getMovie(arrayOfMovies[2]);
 getMovie(arrayOfMovies[3]);
-
 
 var previousDataJSON = localStorage.getItem('data');
 if (previousDataJSON !== null) {

@@ -51,8 +51,6 @@ function getMovie(name) {
       arrayAction.push(xhr.response);
       display('action');
     }
-    console.log('val of arrayAction', arrayAction);
-    console.log('val of arrayAction[0]:', arrayAction[0].Poster)
   })
 }
 
@@ -66,9 +64,9 @@ function display(genre) {
       $colfourthimg.src = arrayAction[i].Poster;
       $colfourthimg.alt = arrayAction[i].Title + ' Poster';
       var $dataview = document.createAttribute('data-view');
-      $dataview.value = arrayAction[i];
+      $dataview.value = arrayAction[i].imdbID;
       $colfourthimg.setAttributeNode($dataview);
-
+      console.log($colfourthimg);
       $colfourth.appendChild($colfourthimg);
       $action.appendChild($colfourth);
     }

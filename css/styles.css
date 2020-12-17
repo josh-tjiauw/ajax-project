@@ -92,3 +92,12 @@ nav{
 .movie-poster > img {
   width: 100%;
 }
+
+.favButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#add-to-favorites-button {
+
+}

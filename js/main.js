@@ -5,6 +5,7 @@ var numMovie = 0;
 var arrayOfMovies = ['Avengers: Infinity War', 'Tenet', 'Underwater', 'Terminator 2: Judgment Day'];
 var arrayAction = [];
 var $form = document.querySelector('form');
+var $action = document.getElementById('action-genre');
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -13,14 +14,7 @@ $form.addEventListener('submit', function (event) {
   viewSwap('home');
   data.dataview = 'home';
   $greeting.textContent = "Hello " + data.username + "!";
-  console.log("value of data:", data);
 })
-
-async function help(){
-  await data.username;
-  console.log(data.username);
-}
-help()
 
 var $dataViewNodeList = [];
 for (i = 0; i < $viewNodeList.length; i++) {
@@ -55,14 +49,35 @@ function getMovie(name) {
     data.movie.description = xhr.response.Plot;
     if (xhr.response.Genre.includes('Action')){
       arrayAction.push(xhr.response);
+      display('action');
     }
+    console.log('val of arrayAction', arrayAction);
+    console.log('val of arrayAction[0]:', arrayAction[0].Poster)
   })
 }
 
-for(var i=0; i<arrayOfMovies.length; i++){
-  getMovie(arrayOfMovies[i]);
-  numMovie++;
+function display(genre) {
+  if (genre === 'action') {
+    for (var i = numMovie; i < arrayAction.length; i++) {
+      var $colfourth = document.createElement('div')
+      $colfourth.className = 'col-fourth';
+
+      var $colfourthimg = document.createElement('img');
+      $colfourthimg.src = arrayAction[i].Poster;
+      $colfourthimg.alt = arrayAction[i].Title + ' Poster';
+
+      $colfourth.appendChild($colfourthimg);
+      $action.appendChild($colfourth);
+    }
+    numMovie++;
+  }
 }
+
+getMovie(arrayOfMovies[0]);
+getMovie(arrayOfMovies[1]);
+getMovie(arrayOfMovies[2]);
+getMovie(arrayOfMovies[3]);
+
 
 var previousDataJSON = localStorage.getItem('data');
 if (previousDataJSON !== null) {

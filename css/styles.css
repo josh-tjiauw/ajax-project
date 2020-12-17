@@ -85,5 +85,9 @@ nav{
 }
 
 .movie-poster {
+  display: flex;
+  justify-content: center;
+}
+.movie-poster > img {
   width: 100%;
 }

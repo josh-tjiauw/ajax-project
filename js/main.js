@@ -55,8 +55,17 @@ function getMovie(name) {
   xhr.addEventListener('load', function () {
     var $movieContainer = document.getElementById(xhr.response.imdbID);
     var $movieImg = document.createElement('img');
+    var $movieImgContainer = document.createElement('div');
+    var $movieTitle = document.createElement('h1');
+    var $movieRatings = document.createElement('h2');
+    $movieTitle.innerHTML = xhr.response.Title;
+    $movieRatings.innerHTML = 'Ratings: ' + xhr.response.Ratings[0].Value;
+    $movieImgContainer.className = 'movie-poster';
     $movieImg.src = xhr.response.Poster;
-    $movieContainer.appendChild($movieImg);
+    $movieImgContainer.appendChild($movieImg);
+    $movieContainer.appendChild($movieImgContainer);
+    $movieContainer.appendChild($movieTitle);
+    $movieContainer.appendChild($movieRatings);
 
     data.movie.title = xhr.response.Title;
     data.movie.year = xhr.response.Year;

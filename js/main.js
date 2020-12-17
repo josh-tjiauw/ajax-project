@@ -36,10 +36,10 @@ function viewSwap(dataview) {
 }
 
 document.addEventListener('click', function (event) {
-  if (event.target.nodeName === 'BUTTON') {
+  if (event.target.nodeName === 'BUTTON' && data.view === 'home' || data.view === 'favorites') {
     viewSwap(event.target.getAttribute('data-view'));
   }
-  else if (event.target.nodeName === 'IMG' && data.view === 'home') {
+  else if (event.target.nodeName === 'IMG' && data.view === 'home' || data.view === 'favorites') {
     viewSwap(event.target.getAttribute('data-view'));
   }
   else {
@@ -59,7 +59,11 @@ function getMovie(name) {
     var $movieTitle = document.createElement('h1');
     var $movieRatings = document.createElement('h2');
     var $movieLength = document.createElement('h2');
-    var $movieDescription = document.createElement('p')
+    var $movieDescription = document.createElement('p');
+    var $favButtonContainer = document.createElement('div');
+    var $addToFavorites = document.createElement('button');
+
+
     $movieDescription.className = 'subheader-text';
     $movieDescription.innerHTML = xhr.response.Plot;
     $movieLength.className = 'subheader-text';
@@ -70,12 +74,18 @@ function getMovie(name) {
     $movieRatings.innerHTML = 'Ratings: ' + xhr.response.Ratings[0].Value;
     $movieImgContainer.className = 'movie-poster';
     $movieImg.src = xhr.response.Poster;
+    $favButtonContainer.className = 'favButtonContainer'
+    $addToFavorites.className = 'subheader-text';
+    $addToFavorites.id = 'add-to-favorites-button';
+    $addToFavorites.textContent = 'Add to Favorites';
     $movieImgContainer.appendChild($movieImg);
     $movieContainer.appendChild($movieImgContainer);
     $movieContainer.appendChild($movieTitle);
     $movieContainer.appendChild($movieRatings);
     $movieContainer.appendChild($movieLength);
     $movieContainer.appendChild($movieDescription);
+    $favButtonContainer.appendChild($addToFavorites);
+    $movieContainer.appendChild($favButtonContainer);
 
     data.movie.title = xhr.response.Title;
     data.movie.year = xhr.response.Year;

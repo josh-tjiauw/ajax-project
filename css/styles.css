@@ -93,11 +93,13 @@
 
 #submit-name{
   float: right;
-  margin: 20px auto;
+  margin: 10px auto;
   font-family: 'Balsamiq Sans', cursive;
-  border: solid black;
+  border: solid #cb413e;
   border-radius: 5px;
-  background-color: white;
+  background-color: #cb413e;
+  color: white;
+  padding: 5px 15px;
 }
 
 .movie-poster {
@@ -115,9 +117,11 @@
 }
 
 #add-to-favorites-button, #remove-from-favorites-button {
-  border: solid black;
+  border: solid #cb413e;
   border-radius: 5px;
-  background-color: white;
+  background-color: #cb413e;
+  padding: 10px 30px;
+  color: white;
 }
 
 #add-to-favorites-button:hover, #remove-from-favorites-button:hover {

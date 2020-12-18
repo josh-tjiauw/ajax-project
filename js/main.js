@@ -7,6 +7,8 @@ var arrayAction = [];
 var $form = document.querySelector('form');
 var $action = document.getElementById('action-genre');
 var $container = document.querySelector('.container');
+var $homeNav = document.getElementById('home-button');
+var $favoritesNav = document.getElementById('favorites-button')
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -39,7 +41,10 @@ document.addEventListener('click', function (event) {
   if (event.target.nodeName === 'BUTTON' && event.target.id === 'home-button' || event.target.id === 'favorites-button') {
     viewSwap(event.target.getAttribute('data-view'));
   }
-  else if (event.target.nodeName === 'IMG' && data.view === 'home' || data.view === 'favorites') {
+  else if (event.target.nodeName === 'IMG' && data.view === 'home') {
+    viewSwap(event.target.getAttribute('data-view'));
+  }
+  else if (event.target.nodeName === 'IMG' && data.view === 'favorites') {
     viewSwap(event.target.getAttribute('data-view'));
   }
   else {

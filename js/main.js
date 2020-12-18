@@ -72,16 +72,16 @@ function getMovie(name) {
     var $removeFromFavorites = document.createElement('button')
 
     $addToFavorites.addEventListener('click', function(){
-      data.favorites.push(xhr.response);
       $addToFavorites.className = 'hidden';
       $removeFromFavorites.className = 'subheader-text';
+      data.favorites.push(xhr.response);
       displayFavorites();
-
     })
 
     $removeFromFavorites.addEventListener('click', function(){
       $addToFavorites.className = 'subheader-text';
       $removeFromFavorites.className = 'hidden';
+      removeFavorites();
     })
 
     $movieDescription.className = 'subheader-text';
@@ -125,10 +125,32 @@ function getMovie(name) {
   })
 }
 
+function returnFavoritesIndex() {
+  for(var i = 0; i < data.favorites.length; i++){
+    if(data.view === data.favorites[i].imdbID){
+      return i;
+    }
+  }
+  return i;
+}
+
+function removeFavorites() {
+  var index = returnFavoritesIndex();
+  var $colfourtharray = document.querySelectorAll('.col-fourth');
+  for (var i = 0; i < $colfourtharray.length; i++) {
+    if ($colfourtharray[i].id === data.view){
+      $colfourtharray[i].remove()
+    }
+  }
+  data.favorites.splice(index, 1);
+  numFavs--;
+}
+
 function displayFavorites() {
   for(var i = numFavs; i<data.favorites.length; i++){
     var $colfourth = document.createElement('div')
     $colfourth.className = 'col-fourth';
+    $colfourth.id = data.favorites[i].imdbID;
     var $colfourthimg = document.createElement('img');
     $colfourthimg.src = data.favorites[i].Poster;
     $colfourthimg.alt = data.favorites[i].Title + ' Poster';

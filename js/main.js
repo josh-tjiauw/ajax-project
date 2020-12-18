@@ -41,7 +41,12 @@ function viewSwap(dataview) {
 
 document.addEventListener('click', function (event) {
   if (event.target.nodeName === 'BUTTON' && event.target.id === 'home-button' || event.target.id === 'favorites-button') {
-    viewSwap(event.target.getAttribute('data-view'));
+    if(data.view !== 'login'){
+      viewSwap(event.target.getAttribute('data-view'));
+    }
+    else {
+      return;
+    }
   }
   else if (event.target.nodeName === 'IMG' && data.view === 'home') {
     viewSwap(event.target.getAttribute('data-view'));
@@ -53,6 +58,8 @@ document.addEventListener('click', function (event) {
     return;
   }
 })
+
+viewSwap('login');
 
 function getMovie(name) {
   var xhr = new XMLHttpRequest();

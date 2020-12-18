@@ -1,4 +1,5 @@
-nav{
+@media screen and (max-width: 375px){
+  nav{
   background-color: gray;
   height: 75px;
   position: relative;
@@ -30,6 +31,10 @@ nav{
 .subheader-text{
   font-family: 'Balsamiq Sans', cursive;
   font-size: 24px;
+}
+
+#greeting{
+  text-align: center;
 }
 
 #home-button, #favorites-button {
@@ -126,4 +131,146 @@ nav{
   border:solid black;
   border-radius: 5px;
   cursor: pointer;
+}
+}
+
+@media screen and (min-width:376px){
+  nav{
+  background-color: gray;
+  height: 75px;
+  position: relative;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+.hidden{
+  display: none;
+}
+
+#home-button{
+  position: absolute;
+  right: 7.5rem;
+}
+
+#favorites-button{
+  position: absolute;
+  right: 2rem;
+}
+
+.header-text {
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 40px;
+}
+
+.subheader-text{
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 36px;
+}
+
+.center-title{
+  text-align: center;
+  font-size: 60px;
+}
+
+#home-button, #favorites-button {
+  border: none;
+  background-color: gray;
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 16px;
+  height: 100%;
+}
+#home-button:hover, #favorites-button:hover{
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.row{
+  display: flex;
+  margin: 2rem auto;
+}
+
+.col-fourth {
+  width: 25%;
+  margin: 0.25rem;
+  border: solid black;
+  border-radius: 10px;
+}
+
+.col-fourth img{
+  width: 100%;
+  height: 100%;
+}
+
+.col-fourth:hover {
+  cursor: pointer;
+}
+
+.center{
+  margin: 20rem 5rem;
+}
+
+.desc-img {
+  margin-top: 1rem;
+  border: solid black;
+  border-radius: 5px;
+}
+
+#user-name{
+  width: 100%;
+  height: 50px;
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 30px;
+  border: black solid;
+  border-radius: 5px;
+}
+
+#user-name:focus{
+  background-color: black;
+  color: white;
+  border: black solid;
+  border-radius: 5px;
+}
+
+#submit-name{
+  float: right;
+  margin: 20px auto;
+  font-size: 30px;
+  font-family: 'Balsamiq Sans', cursive;
+  border: solid #cb413e;
+  border-radius: 5px;
+  background-color: #cb413e;
+  color: white;
+  padding: 10px 30px;
+}
+
+.movie-poster {
+  display: flex;
+  justify-content: center;
+}
+
+.movie-poster > img {
+  width: 100%;
+}
+
+.favButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#add-to-favorites-button, #remove-from-favorites-button {
+  border: solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#add-to-favorites-button:hover, #remove-from-favorites-button:hover {
+  background-color: black;
+  color: white;
+  border:solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
 }

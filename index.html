@@ -21,13 +21,15 @@
         <form id='login-info'>
           <label for="user-name" class="header-text">Enter your name:</label>
           <input type="text" id="user-name" required>
-          <input type="submit" value="Submit" id="submit-name">
+          <div class="row">
+            <input type="submit" value="Submit" id="submit-name">
+          </div>
         </form>
       </div>
     </div>
 
     <div data-view="home" class="view hidden">
-      <h1 class="header-text" id='greeting'></h1>
+      <h1 class="header-text center-title" id='greeting'></h1>
       <h2 class="subheader-text">
         Movies you might like:<br>
       </h2>
@@ -42,7 +44,7 @@
     <div id='tt4154756' data-view="tt4154756" class="view hidden"></div>
 
     <div data-view="favorites" class="view hidden">
-      <h1 class="header-text">Your Favorites List</h1>
+      <h1 class="header-text center-title">Your Favorites List</h1>
       <div id='favorites' class="row"></div>
     </div>
   </div>

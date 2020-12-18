@@ -142,7 +142,7 @@
 }
 
 .container {
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .hidden{
@@ -151,7 +151,7 @@
 
 #home-button{
   position: absolute;
-  right: 7.5rem;
+  right: 10rem;
 }
 
 #favorites-button{
@@ -178,7 +178,7 @@
   border: none;
   background-color: gray;
   font-family: 'Balsamiq Sans', cursive;
-  font-size: 16px;
+  font-size: 24px;
   height: 100%;
 }
 #home-button:hover, #favorites-button:hover{
@@ -213,9 +213,8 @@
 }
 
 .desc-img {
-  margin-top: 1rem;
-  border: solid black;
-  border-radius: 5px;
+  padding: 3rem 10rem;
+  border-image: 100px;
 }
 
 #user-name{
@@ -261,9 +260,11 @@
 }
 
 #add-to-favorites-button, #remove-from-favorites-button {
-  border: solid black;
+  border: solid #cb413e;
   border-radius: 5px;
-  background-color: white;
+  background-color: #cb413e;
+  color: white;
+  padding: 10px 30px;
 }
 
 #add-to-favorites-button:hover, #remove-from-favorites-button:hover {

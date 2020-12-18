@@ -1,6 +1,7 @@
 var $viewNodeList = document.getElementsByClassName('view');
 var $username = document.getElementById('user-name');
 var $greeting = document.getElementById('greeting')
+var getMovieCounter = 0;
 var numMovie = 0;
 var numFavs = 0;
 var arrayOfMovies = ['Avengers: Infinity War', 'Tenet', 'Underwater', 'Terminator 2: Judgment Day'];
@@ -101,6 +102,7 @@ function getMovie(name) {
     $movieRatings.innerHTML = 'Ratings: ' + xhr.response.Ratings[0].Value;
     $movieImgContainer.className = 'movie-poster';
     $movieImg.src = xhr.response.Poster;
+    $movieImg.className = 'desc-img';
     $favButtonContainer.className = 'favButtonContainer'
     $addToFavorites.className = 'subheader-text';
     $addToFavorites.id = 'add-to-favorites-button';
@@ -118,13 +120,6 @@ function getMovie(name) {
     $favButtonContainer.append($removeFromFavorites);
     $movieContainer.appendChild($favButtonContainer);
 
-    data.movie.title = xhr.response.Title;
-    data.movie.year = xhr.response.Year;
-    data.movie.ratings = xhr.response.Ratings[0];
-    data.movie.length = xhr.response.Runtime;
-    data.movie.genre = xhr.response.Genre;
-    data.movie.actors = xhr.response.Actors;
-    data.movie.description = xhr.response.Plot;
     if (xhr.response.Genre.includes('Action')) {
       arrayAction.push(xhr.response);
       display('action');
@@ -188,11 +183,10 @@ function display(genre) {
   }
 }
 
-getMovie(arrayOfMovies[0]);
-getMovie(arrayOfMovies[1]);
-getMovie(arrayOfMovies[2]);
-getMovie(arrayOfMovies[3]);
-
+for(var i=getMovieCounter; i<arrayOfMovies.length; i++){
+  getMovie(arrayOfMovies[i]);
+  getMovieCounter++
+}
 
 var previousDataJSON = localStorage.getItem('data');
 if (previousDataJSON !== null) {

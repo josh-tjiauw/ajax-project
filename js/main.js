@@ -2,6 +2,7 @@ var $viewNodeList = document.getElementsByClassName('view');
 var $username = document.getElementById('user-name');
 var $greeting = document.getElementById('greeting')
 var numMovie = 0;
+var numFavs = 0;
 var arrayOfMovies = ['Avengers: Infinity War', 'Tenet', 'Underwater', 'Terminator 2: Judgment Day'];
 var arrayAction = [];
 var $form = document.querySelector('form');
@@ -9,6 +10,7 @@ var $action = document.getElementById('action-genre');
 var $container = document.querySelector('.container');
 var $homeNav = document.getElementById('home-button');
 var $favoritesNav = document.getElementById('favorites-button')
+var $favoritesPage = document.getElementById('favorites')
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -70,13 +72,14 @@ function getMovie(name) {
     var $removeFromFavorites = document.createElement('button')
 
     $addToFavorites.addEventListener('click', function(){
-      data.favorites.push(xhr.response.Title);
+      data.favorites.push(xhr.response);
       $addToFavorites.className = 'hidden';
       $removeFromFavorites.className = 'subheader-text';
+      displayFavorites();
+
     })
 
     $removeFromFavorites.addEventListener('click', function(){
-
       $addToFavorites.className = 'subheader-text';
       $removeFromFavorites.className = 'hidden';
     })
@@ -122,12 +125,27 @@ function getMovie(name) {
   })
 }
 
+function displayFavorites() {
+  for(var i = numFavs; i<data.favorites.length; i++){
+    var $colfourth = document.createElement('div')
+    $colfourth.className = 'col-fourth';
+    var $colfourthimg = document.createElement('img');
+    $colfourthimg.src = data.favorites[i].Poster;
+    $colfourthimg.alt = data.favorites[i].Title + ' Poster';
+    var $dataview = document.createAttribute('data-view');
+    $dataview.value = data.favorites[i].imdbID;
+    $colfourthimg.setAttributeNode($dataview);
+    $colfourth.appendChild($colfourthimg);
+    $favoritesPage.appendChild($colfourth);
+  }
+  numFavs++;
+}
+
 function display(genre) {
   if (genre === 'action') {
     for (var i = numMovie; i < arrayAction.length; i++) {
       var $colfourth = document.createElement('div')
       $colfourth.className = 'col-fourth';
-
       var $colfourthimg = document.createElement('img');
       $colfourthimg.src = arrayAction[i].Poster;
       $colfourthimg.alt = arrayAction[i].Title + ' Poster';
@@ -145,6 +163,7 @@ getMovie(arrayOfMovies[0]);
 getMovie(arrayOfMovies[1]);
 getMovie(arrayOfMovies[2]);
 getMovie(arrayOfMovies[3]);
+
 
 var previousDataJSON = localStorage.getItem('data');
 if (previousDataJSON !== null) {

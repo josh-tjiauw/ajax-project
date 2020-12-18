@@ -26,7 +26,7 @@ nav{
 
 .header-text {
   font-family: 'Balsamiq Sans', cursive;
-  font-size: 42px;
+  font-size: 40px;
 }
 
 .subheader-text{
@@ -96,8 +96,4 @@ nav{
 .favButtonContainer {
   display: flex;
   justify-content: center;
-}
-
-#add-to-favorites-button {
-
 }

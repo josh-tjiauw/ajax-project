@@ -14,13 +14,11 @@ nav{
 
 #home-button{
   position: absolute;
-  top: 1.5rem;
   right: 7rem;
 }
 
 #favorites-button{
   position: absolute;
-  top: 1.5rem;
   right: 1rem;
 }
 
@@ -39,6 +37,12 @@ nav{
   background-color: gray;
   font-family: 'Balsamiq Sans', cursive;
   font-size: 16px;
+  height: 100%;
+}
+#home-button:hover, #favorites-button:hover{
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
 
 .row{
@@ -49,15 +53,27 @@ nav{
 .col-fourth {
   width: 25%;
   margin: 0.25rem;
+  border: solid black;
+  border-radius: 10px;
 }
 
 .col-fourth img{
   width: 100%;
-  max-height: 117px;
+  height: 100%;
+}
+
+.col-fourth:hover {
+  cursor: pointer;
 }
 
 .center{
   margin: 12.5rem auto;
+}
+
+.desc-img {
+  margin-top: 1rem;
+  border: solid black;
+  border-radius: 5px;
 }
 
 #user-name{
@@ -96,4 +112,18 @@ nav{
 .favButtonContainer {
   display: flex;
   justify-content: center;
+}
+
+#add-to-favorites-button, #remove-from-favorites-button {
+  border: solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#add-to-favorites-button:hover, #remove-from-favorites-button:hover {
+  background-color: black;
+  color: white;
+  border:solid black;
+  border-radius: 5px;
+  cursor: pointer;
 }

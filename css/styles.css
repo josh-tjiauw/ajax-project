@@ -1,12 +1,6 @@
-@media screen and (max-width: 375px){
-  nav{
+nav{
   background-color: gray;
-  height: 75px;
   position: relative;
-}
-
-.container {
-  padding: 0 1rem;
 }
 
 .hidden{
@@ -15,22 +9,18 @@
 
 #home-button{
   position: absolute;
-  right: 7rem;
 }
 
 #favorites-button{
   position: absolute;
-  right: 1rem;
 }
 
-.header-text {
-  font-family: 'Balsamiq Sans', cursive;
-  font-size: 40px;
+.center-title{
+  text-align: center;
 }
 
-.subheader-text{
+.header-text, .subheader-text{
   font-family: 'Balsamiq Sans', cursive;
-  font-size: 24px;
 }
 
 #greeting{
@@ -39,9 +29,8 @@
 
 #home-button, #favorites-button {
   border: none;
-  background-color: gray;
   font-family: 'Balsamiq Sans', cursive;
-  font-size: 16px;
+  background-color: gray;
   height: 100%;
 }
 
@@ -52,7 +41,6 @@
 
 .col-fourth {
   width: 25%;
-  margin: 0.25rem;
   border: solid black;
   border-radius: 10px;
 }
@@ -66,19 +54,8 @@
   cursor: pointer;
 }
 
-.center{
-  margin: 12.5rem auto;
-}
-
-.desc-img {
-  margin-top: 1rem;
-  border: solid black;
-  border-radius: 5px;
-}
-
 #user-name{
   width: 100%;
-  height: 30px;
   font-family: 'Balsamiq Sans', cursive;
   border: black solid;
   border-radius: 5px;
@@ -92,14 +69,11 @@
 }
 
 #submit-name{
-  float: right;
-  margin: 10px auto;
   font-family: 'Balsamiq Sans', cursive;
   border: solid #cb413e;
   border-radius: 5px;
   background-color: #cb413e;
   color: white;
-  padding: 5px 15px;
 }
 
 .movie-poster {
@@ -120,7 +94,6 @@
   border: solid #cb413e;
   border-radius: 5px;
   background-color: #cb413e;
-  padding: 10px 30px;
   color: white;
 }
 
@@ -131,71 +104,111 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 375px){
+  nav{
+  background-color: gray;
+  height: 75px;
+  position: relative;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+#home-button{
+  right: 7rem;
+}
+
+#favorites-button{
+  right: 1rem;
+}
+
+.header-text {
+  font-size: 40px;
+}
+
+.subheader-text{
+  font-size: 24px;
+}
+
+#greeting{
+  text-align: center;
+}
+
+#home-button, #favorites-button {
+  font-size: 16px;
+}
+
+.col-fourth {
+  margin: 0.25rem;
+}
+
+.center{
+  margin: 12.5rem auto;
+}
+
+.desc-img {
+  margin-top: 1rem;
+}
+
+#user-name{
+  height: 30px;
+}
+
+#user-name:focus{
+  background-color: black;
+  color: white;
+  border: black solid;
+  border-radius: 5px;
+}
+
+#submit-name{
+  margin: 0px auto;
+  padding: 5px 15px;
+}
+
+#add-to-favorites-button, #remove-from-favorites-button {
+  padding: 10px 30px;
+  margin-bottom: 10px;
+}
 }
 
 @media screen and (min-width:376px){
   nav{
-  background-color: gray;
   height: 100px;
-  position: relative;
 }
 
 .container {
   padding: 0 2rem;
 }
 
-.hidden{
-  display: none;
-}
-
 #home-button{
-  position: absolute;
   right: 10rem;
 }
 
 #favorites-button{
-  position: absolute;
   right: 2rem;
 }
 
 .header-text {
-  font-family: 'Balsamiq Sans', cursive;
   font-size: 40px;
 }
 
 .subheader-text{
-  font-family: 'Balsamiq Sans', cursive;
   font-size: 36px;
 }
 
 .center-title{
-  text-align: center;
   font-size: 60px;
 }
 
 #home-button, #favorites-button {
-  border: none;
-  background-color: gray;
-  font-family: 'Balsamiq Sans', cursive;
   font-size: 24px;
-  height: 100%;
-}
-
-.row{
-  display: flex;
-  margin: 2rem auto;
 }
 
 .col-fourth {
-  width: 25%;
   margin: 0.25rem;
-  border: solid black;
-  border-radius: 10px;
-}
-
-.col-fourth img{
-  width: 100%;
-  height: 100%;
 }
 
 .center{
@@ -216,44 +229,100 @@
   border-radius: 5px;
 }
 
-#user-name:focus{
-  background-color: black;
-  color: white;
-  border: black solid;
-  border-radius: 5px;
-}
-
 #submit-name{
-  float: right;
   margin: 20px auto;
   font-size: 30px;
-  font-family: 'Balsamiq Sans', cursive;
-  border: solid #cb413e;
-  border-radius: 5px;
+  padding: 10px 30px;
+}
+
+
+#add-to-favorites-button, #remove-from-favorites-button {
+  padding: 10px 30px;
+  margin-bottom: 25px;
+}
+}
+
+@media screen and (min-width: 769px){
+  nav{
+  height: 100px;
+}
+
+.container {
+  margin: 0px auto;
+  padding: 0 2rem;
+  max-width: 1200px;
+}
+
+#home-button{
+  right: 20rem;
+}
+
+#favorites-button{
+  right: 10rem;
+}
+
+.header-text {
+  font-size: 40px;
+}
+
+.subheader-text{
+  font-size: 36px;
+}
+
+.center-title{
+  font-size: 60px;
+}
+
+#home-button, #favorites-button {
+  font-size: 30px;
+}
+
+#home-button:hover, #favorites-button:hover {
+  cursor: pointer;
   background-color: #cb413e;
   color: white;
-  padding: 10px 30px;
+  transition: 0.5s;
+}
+
+.col-fourth {
+  margin: 0.5rem;
+}
+
+.col-fourth:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.center{
+  margin: 20rem 5rem;
+}
+
+.desc-img {
+  padding: 3rem 10rem;
+}
+
+#user-name{
+  width: 100%;
+  height: 50px;
+  font-size: 30px;
+}
+
+#submit-name:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 .movie-poster {
-  display: flex;
-  justify-content: center;
+  padding: 2rem 10rem;
 }
 
-.movie-poster > img {
-  width: 100%;
-}
 
-.favButtonContainer {
-  display: flex;
-  justify-content: center;
-}
-
-#add-to-favorites-button, #remove-from-favorites-button {
-  border: solid #cb413e;
-  border-radius: 5px;
+#add-to-favorites-button:hover, #remove-from-favorites-button:hover{
+  transform: scale(1.1);
   background-color: #cb413e;
-  color: white;
-  padding: 10px 30px;
+  transition: 0.5s;
+  cursor: pointer;
 }
 }

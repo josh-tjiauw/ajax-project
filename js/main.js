@@ -79,10 +79,15 @@ function getMovie(name) {
     var $addToFavorites = document.createElement('button');
     var $removeFromFavorites = document.createElement('button')
 
+
+
     $addToFavorites.addEventListener('click', function(){
       $addToFavorites.className = 'hidden';
       $removeFromFavorites.className = 'subheader-text';
       data.favorites.push(xhr.response);
+      if(data.favorites.length > 0){
+        $empty.className = 'hidden';
+      }
       displayFavorites();
     })
 
@@ -90,6 +95,9 @@ function getMovie(name) {
       $addToFavorites.className = 'subheader-text';
       $removeFromFavorites.className = 'hidden';
       removeFavorites();
+      if (data.favorites.length === 0) {
+        $empty.className = 'header-text';
+      }
     })
 
     $movieDescription.className = 'subheader-text';
@@ -126,6 +134,11 @@ function getMovie(name) {
     }
   })
 }
+
+var $empty = document.createElement('h1');
+$empty.className = 'header-text';
+$empty.textContent = 'Your Favorites List is Empty. Add movies from the Home Page!';
+$favoritesPage.appendChild($empty);
 
 function returnFavoritesIndex() {
   for(var i = 0; i < data.favorites.length; i++){
@@ -164,6 +177,7 @@ function displayFavorites() {
   }
   numFavs++;
 }
+
 
 function display(genre) {
   if (genre === 'action') {

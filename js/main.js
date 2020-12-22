@@ -64,7 +64,7 @@ viewSwap('login');
 
 function getMovie(name) {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://www.omdbapi.com/?t=' + name + '&apikey=6bc8c31e');
+  xhr.open('GET', 'https://www.omdbapi.com/?t=' + name + '&apikey=6bc8c31e');
   xhr.responseType = 'json';
   xhr.send();
   xhr.addEventListener('load', function () {

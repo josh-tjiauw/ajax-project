@@ -90,14 +90,14 @@ nav{
   justify-content: center;
 }
 
-#add-to-favorites-button, #remove-from-favorites-button {
+#return-home, #add-to-favorites-button, #remove-from-favorites-button {
   border: solid #cb413e;
   border-radius: 5px;
   background-color: #cb413e;
   color: white;
 }
 
-#add-to-favorites-button:hover, #remove-from-favorites-button:hover {
+#return-home:hover, #add-to-favorites-button:hover, #remove-from-favorites-button:hover {
   background-color: black;
   color: white;
   border:solid black;
@@ -168,7 +168,7 @@ nav{
   padding: 5px 15px;
 }
 
-#add-to-favorites-button, #remove-from-favorites-button {
+#return-home, #add-to-favorites-button, #remove-from-favorites-button {
   padding: 10px 30px;
   margin-bottom: 10px;
 }
@@ -236,7 +236,7 @@ nav{
 }
 
 
-#add-to-favorites-button, #remove-from-favorites-button {
+#return-home, #add-to-favorites-button, #remove-from-favorites-button {
   padding: 10px 30px;
   margin-bottom: 25px;
 }
@@ -319,7 +319,7 @@ nav{
 }
 
 
-#add-to-favorites-button:hover, #remove-from-favorites-button:hover{
+#return-home:hover, #add-to-favorites-button:hover, #remove-from-favorites-button:hover{
   transform: scale(1.1);
   background-color: #cb413e;
   transition: 0.5s;

@@ -12,6 +12,7 @@ var $container = document.querySelector('.container');
 var $homeNav = document.getElementById('home-button');
 var $favoritesNav = document.getElementById('favorites-button')
 var $favoritesPage = document.getElementById('favorites')
+var $favoritesContainer = document.getElementById('favorites-container')
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -41,7 +42,7 @@ function viewSwap(dataview) {
 }
 
 document.addEventListener('click', function (event) {
-  if (event.target.nodeName === 'BUTTON' && event.target.id === 'home-button' || event.target.id === 'favorites-button') {
+  if (event.target.nodeName === 'BUTTON' && event.target.id === 'home-button' || event.target.id === 'favorites-button' || event.target.id === 'return-home') {
     if(data.view !== 'login'){
       viewSwap(event.target.getAttribute('data-view'));
     }
@@ -96,7 +97,7 @@ function getMovie(name) {
       $removeFromFavorites.className = 'hidden';
       removeFavorites();
       if (data.favorites.length === 0) {
-        $empty.className = 'header-text';
+        $empty.className = 'header-text center-title';
       }
     })
 
@@ -136,9 +137,16 @@ function getMovie(name) {
 }
 
 var $empty = document.createElement('h1');
-$empty.className = 'header-text';
-$empty.textContent = 'Your Favorites List is Empty. Add movies from the Home Page!';
-$favoritesPage.appendChild($empty);
+$empty.className = 'header-text center-title';
+$empty.innerHTML = 'Your Favorites List is Empty.<br>Add movies from the Home Page!<br>';
+var $emptyHome = document.createElement('button');
+$emptyHome.id = 'return-home';
+$emptyHome.textContent = 'Return to Home Page';
+var $homeDataView = document.createAttribute('data-view')
+$homeDataView.value = 'home'
+$emptyHome.setAttributeNode($homeDataView);
+$empty.appendChild($emptyHome);
+$favoritesContainer.appendChild($empty);
 
 function returnFavoritesIndex() {
   for(var i = 0; i < data.favorites.length; i++){

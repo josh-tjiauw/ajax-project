@@ -90,14 +90,14 @@ nav{
   justify-content: center;
 }
 
-#add-to-favorites-button, #remove-from-favorites-button {
+#return-home, #add-to-favorites-button, #remove-from-favorites-button {
   border: solid #cb413e;
   border-radius: 5px;
   background-color: #cb413e;
   color: white;
 }
 
-#add-to-favorites-button:hover, #remove-from-favorites-button:hover {
+#return-home:hover, #add-to-favorites-button:hover, #remove-from-favorites-button:hover {
   background-color: black;
   color: white;
   border:solid black;
@@ -168,13 +168,12 @@ nav{
   padding: 5px 15px;
 }
 
-#add-to-favorites-button, #remove-from-favorites-button {
+#return-home, #add-to-favorites-button, #remove-from-favorites-button {
   padding: 10px 30px;
   margin-bottom: 10px;
 }
 }
-
-@media screen and (min-width:376px){
+@media screen and (min-width: 376px){
   nav{
   height: 100px;
 }
@@ -192,15 +191,11 @@ nav{
 }
 
 .header-text {
-  font-size: 40px;
-}
-
-.subheader-text{
   font-size: 36px;
 }
 
-.center-title{
-  font-size: 60px;
+.subheader-text{
+  font-size: 30px;
 }
 
 #home-button, #favorites-button {
@@ -211,9 +206,9 @@ nav{
   margin: 0.25rem;
 }
 
-.center{
-  margin: 20rem 5rem;
-}
+  .center{
+    margin: 5rem 5rem;
+  }
 
 .desc-img {
   padding: 3rem 10rem;
@@ -236,9 +231,14 @@ nav{
 }
 
 
-#add-to-favorites-button, #remove-from-favorites-button {
+#return-home, #add-to-favorites-button, #remove-from-favorites-button {
   padding: 10px 30px;
   margin-bottom: 25px;
+}
+}
+@media screen and (min-width: 668px){
+.center{
+  margin: 20rem 5rem;
 }
 }
 
@@ -295,7 +295,7 @@ nav{
 }
 
 .center{
-  margin: 20rem 5rem;
+  margin: 15rem 5rem;
 }
 
 .desc-img {
@@ -319,7 +319,7 @@ nav{
 }
 
 
-#add-to-favorites-button:hover, #remove-from-favorites-button:hover{
+#return-home:hover, #add-to-favorites-button:hover, #remove-from-favorites-button:hover{
   transform: scale(1.1);
   background-color: #cb413e;
   transition: 0.5s;

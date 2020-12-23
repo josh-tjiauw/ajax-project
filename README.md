@@ -26,6 +26,6 @@ featuring the implementation of an API key from a movie information database (Th
 
 ![Login Page](/images/ss1.png)
 ![Home Page](/images/home.png)
-![Descriptions Page](images/descriptions.png)
+![Descriptions Page](images/description.png)
 ![Empty Favorites Page](/images/emptyfavorites.png)
 ![Favorites Page](images/favorites.png)

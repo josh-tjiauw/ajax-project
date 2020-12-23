@@ -1,7 +1,6 @@
 # Movie Reviewer
 
-An application written in HTML, CSS, and JavaScript consisting of AJAX methods to showcase an array of movies and their descriptions,
-featuring the implementation of an API key from a movie information database (The Open Movie Database).
+An application written in HTML, CSS, and JavaScript implementing AJAX functions to send and receive information from the OMDb (Open Movie Database) API to obtain a chosen movie's image, ratings, length, and plot description. The user is able to see a variety of movies in a specific genre, and append that movie to their favorites list if they choose to re-watch the movie in the future.
 
 * Check out my demonstration video [here!](https://drive.google.com/file/d/1uayOPgz3RvMtt8uw6Gs2WeJOnyoI5GSk/view?usp=sharing)
 

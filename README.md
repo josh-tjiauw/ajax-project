@@ -23,3 +23,9 @@ featuring the implementation of an API key from a movie information database (Th
   * Finding and implementing API keys from an external site.
   * Using XHR (XMLHttpRequest) and the request in order to input data and create jQueries based on the response given.
   * Making a "data unavailable" page whenever the user has not put any movies in the favorites section.
+
+![Login Page](/images/ss1.png)
+![Home Page](/images/home.png)
+![Descriptions Page](images/descriptions.png)
+![Empty Favorites Page](/images/emptyfavorites.png)
+![Favorites Page](images/favorites.png)

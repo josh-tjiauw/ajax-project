@@ -80,8 +80,6 @@ function getMovie(name) {
     var $addToFavorites = document.createElement('button');
     var $removeFromFavorites = document.createElement('button')
 
-
-
     $addToFavorites.addEventListener('click', function(){
       $addToFavorites.className = 'hidden';
       $removeFromFavorites.className = 'subheader-text';
@@ -97,7 +95,7 @@ function getMovie(name) {
       $removeFromFavorites.className = 'hidden';
       removeFavorites();
       if (data.favorites.length === 0) {
-        $empty.className = 'header-text center-title';
+        $empty.className = 'subheader-text center-title';
       }
     })
 
@@ -119,6 +117,7 @@ function getMovie(name) {
     $removeFromFavorites.className = 'subheader-text hidden';
     $removeFromFavorites.id = 'remove-from-favorites-button';
     $removeFromFavorites.textContent = 'Remove From Favorites';
+
     $movieImgContainer.appendChild($movieImg);
     $movieContainer.appendChild($movieImgContainer);
     $movieContainer.appendChild($movieTitle);
@@ -137,8 +136,8 @@ function getMovie(name) {
 }
 
 var $empty = document.createElement('h1');
-$empty.className = 'header-text center-title';
-$empty.innerHTML = 'Your Favorites List is Empty.<br>Add movies from the Home Page!<br>';
+$empty.className = 'subheader-text center-title';
+$empty.innerHTML = 'Your Favorites List is Empty.<br><br>Add movies from the Home Page!<br><br>';
 var $emptyHome = document.createElement('button');
 $emptyHome.id = 'return-home';
 $emptyHome.textContent = 'Return to Home Page';

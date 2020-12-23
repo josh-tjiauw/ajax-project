@@ -1,9 +1,9 @@
 # Movie Reviewer
 
-An application consisting of AJAX methods to showcase an array of movies and their descriptions,
+An application written in HTML, CSS, and JavaScript consisting of AJAX methods to showcase an array of movies and their descriptions,
 featuring the implementation of an API key from a movie information database (The Open Movie Database).
 
-* Check out my demonstration video [here!](https://drive.google.com/file/d/1po_0rB9J9jc1HcdR7GF8y7wQQgJ-xX72/view?usp=sharing)
+* Check out my demonstration video [here!](https://drive.google.com/file/d/1uayOPgz3RvMtt8uw6Gs2WeJOnyoI5GSk/view?usp=sharing)
 
 * Current Feature List:
   * User can input and see their naem on the home page's greeting section.

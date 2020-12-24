@@ -61,7 +61,7 @@ document.addEventListener('click', function (event) {
   }
 })
 
-viewSwap('login');
+viewSwap('home');
 
 function getMovie(name) {
   var xhr = new XMLHttpRequest();

@@ -2,6 +2,54 @@ nav{
   background-color: gray;
   position: relative;
 }
+.movie-carousel{
+  position: relative;
+}
+.action-carousel{
+  position: relative;
+  padding: 0px;
+}
+
+#left-button{
+  position: absolute;
+  font-size: 100px;
+  border: none;
+  top: 40%;
+  transform: translateY(-50%);
+  left: -75px;
+  cursor: pointer;
+}
+
+#right-button {
+  position: absolute;
+  font-size: 100px;
+  border: none;
+  top: 40%;
+  transform: translateY(-50%);
+  right: -75px;
+  cursor: pointer;
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  background: none;
+}
+
+.indicator {
+  margin: 0px 15px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  bottom: 0px;
+  cursor: pointer;
+}
+
+.indicator.current {
+  background: rgba(0,0,0,0.75);
+}
 
 .hidden{
   display: none;

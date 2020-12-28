@@ -10,10 +10,9 @@ var $form = document.querySelector('form');
 var $action = document.getElementById('action-genre');
 var $container = document.querySelector('.container');
 var $homeNav = document.getElementById('home-button');
-var $favoritesNav = document.getElementById('favorites-button');
-var $favoritesPage = document.getElementById('favorites');
-var $favoritesContainer = document.getElementById('favorites-container');
-var $movieListContainer = document.querySelector('.movie-list');
+var $favoritesNav = document.getElementById('favorites-button')
+var $favoritesPage = document.getElementById('favorites')
+var $favoritesContainer = document.getElementById('favorites-container')
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -70,13 +69,6 @@ function getMovie(name) {
   xhr.responseType = 'json';
   xhr.send();
   xhr.addEventListener('load', function () {
-    var $movieList = document.createElement('li');
-    $movieList.id = xhr.response.imdbID;
-    $movieList.classList = 'view hidden';
-    var $listDataView = document.createAttribute('data-view')
-    $listDataView.value = xhr.response.imdbID;
-    $movieList.setAttributeNode($listDataView);
-    $movieListContainer.appendChild($movieList);
 
     var $movieContainer = document.getElementById(xhr.response.imdbID);
     var $movieImg = document.createElement('img');

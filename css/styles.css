@@ -2,6 +2,9 @@ nav{
   background-color: gray;
   position: relative;
 }
+.movie-list {
+  background-color: yellow;
+}
 .movie-carousel{
   position: relative;
 }

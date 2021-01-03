@@ -14,7 +14,7 @@ var $favoritesNav = document.getElementById('favorites-button')
 var $favoritesPage = document.getElementById('favorites')
 var $favoritesContainer = document.getElementById('favorites-container')
 
-$form.addEventListener('submit', function (event) {
+$form.addEventListener('submit', (event) => {
   event.preventDefault();
   data.username = $username.value;
   $form.reset();
@@ -41,7 +41,7 @@ function viewSwap(dataview) {
   }
 }
 
-document.addEventListener('click', function (event) {
+document.addEventListener('click', (event) => {
   if (event.target.nodeName === 'BUTTON' && event.target.id === 'home-button' || event.target.id === 'favorites-button' || event.target.id === 'return-home') {
     if(data.view !== 'login'){
       viewSwap(event.target.getAttribute('data-view'));
@@ -80,7 +80,7 @@ function getMovie(name) {
     var $addToFavorites = document.createElement('button');
     var $removeFromFavorites = document.createElement('button')
 
-    $addToFavorites.addEventListener('click', function(){
+    $addToFavorites.addEventListener('click', () => {
       $addToFavorites.className = 'hidden';
       $removeFromFavorites.className = 'subheader-text';
       data.favorites.push(xhr.response);
@@ -90,7 +90,7 @@ function getMovie(name) {
       displayFavorites();
     })
 
-    $removeFromFavorites.addEventListener('click', function(){
+    $removeFromFavorites.addEventListener('click', () => {
       $addToFavorites.className = 'subheader-text';
       $removeFromFavorites.className = 'hidden';
       removeFavorites();
@@ -214,7 +214,7 @@ if (previousDataJSON !== null) {
   data = JSON.parse(previousDataJSON);
 }
 
-window.addEventListener('beforeunload', function (event) {
+window.addEventListener('beforeunload', (event) => {
   event.preventDefault();
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('movie', dataJSON);

@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AJAX Project</title>
+  <title>Movie Reviewer</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <nav>
-    <button data-view='home' id='home-button' class="header-text">Home</button>
-    <button data-view='favorites' id='favorites-button'>Favorites</button>
+    <span class="nav-text">Movie Reviewer</span>
+    <button data-view="home" id="home-button" class="header-text">Home</button>
+    <button data-view="favorites" id="favorites-button">Favorites</button>
   </nav>
   <div class="container">
     <div data-view="login" class="view">
       <div class="center">
-        <form id='login-info'>
+        <form id="login-info">
           <label for="user-name" class="header-text">Enter your name:</label>
           <input type="text" id="user-name" required>
           <div class="row">
@@ -29,27 +32,42 @@
     </div>
 
     <div data-view="home" class="view hidden">
-      <h1 class="header-text center-title" id='greeting'></h1>
+      <h1 class="header-text center-title" id="greeting"></h1>
       <h2 class="subheader-text">
         Movies you might like:<br>
       </h2>
 
       <h2 class="subheader-text">Action</h2>
       <div id="action-genre" class="row"></div>
+      <h2 class="subheader-text">Documentaries</h2>
+      <div id="documentary-genre" class="row"></div>
+      <h2 class="subheader-text">Anime</h2>
+      <div id="animation-genre" class="row"></div>
     </div>
 
-    <div id='tt6723592' data-view="tt6723592" class="view hidden"></div>
-    <div id='tt0103064' data-view="tt0103064" class="view hidden"></div>
-    <div id='tt5774060' data-view="tt5774060" class="view hidden"></div>
-    <div id='tt4154756' data-view="tt4154756" class="view hidden"></div>
+    <div id="tt6723592" data-view="tt6723592" class="view hidden"></div>
+    <div id="tt1365519" data-view="tt1365519" class="view hidden"></div>
+    <div id="tt5774060" data-view="tt5774060" class="view hidden"></div>
+    <div id="tt4154756" data-view="tt4154756" class="view hidden"></div>
 
-    <div data-view="favorites" class="view hidden" id='favorites-container'>
+    <div id="tt12192654" data-view="tt12192654" class="view hidden"></div>
+    <div id="tt11464826" data-view="tt11464826" class="view hidden"></div>
+    <div id="tt8923484" data-view="tt8923484" class="view hidden"></div>
+    <div id="tt8760684" data-view="tt8760684" class="view hidden"></div>
+
+    <div id="tt12343534" data-view="tt12343534" class="view hidden"></div>
+    <div id="tt7441658" data-view="tt7441658" class="view hidden"></div>
+    <div id="tt2560140" data-view="tt2560140" class="view hidden"></div>
+    <div id="tt0409591" data-view="tt0409591" class="view hidden"></div>
+
+    <div data-view="favorites" class="view hidden" id="favorites-container">
       <h1 class="header-text center-title">Your Favorites List</h1>
-      <div id='favorites' class="row"></div>
+      <div id="favorites" class="row"></div>
     </div>
   </div>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

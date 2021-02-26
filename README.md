@@ -14,7 +14,7 @@ User can add a movie to their favorites list.
 User can remove a movie from their favorites list.
 Planned additions:
 
-User can browse more genres other than action.
+User can browse more genres other than action. (:white_check_mark:)
 Implement a carousel effect so that more than 4 movies can fit within a genre.
 What I learned from working on this project:
 

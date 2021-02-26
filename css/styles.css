@@ -19,8 +19,15 @@ nav{
   text-align: center;
 }
 
-.header-text, .subheader-text{
+.header-text, .subheader-text, .nav-text{
   font-family: 'Balsamiq Sans', cursive;
+}
+
+.nav-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1%;
 }
 
 #greeting{

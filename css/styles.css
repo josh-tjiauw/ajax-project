@@ -194,31 +194,72 @@ nav{
   padding: 2rem 10rem;
 }
 
-
 #return-home:hover, #add-to-favorites-button:hover, #remove-from-favorites-button:hover{
   transform: scale(1.1);
   background-color: #cb413e;
   transition: 0.5s;
   cursor: pointer;
 }
+
+#submit-name{
+  margin: 0px auto;
+  padding: 10px 30px;
+  font-size: 30px;
+}
 }
 
 @media screen and (max-width: 1024px) {
-  nav{
+nav{
   height: 100px;
 }
   body {
     height: 768px;
   }
 .center{
-  margin: 20rem 5rem;
+  margin: 15rem 5rem;
 }
 #home-button{
-  right: 9rem;
+  right: 10rem;
 }
 
 #favorites-button{
   right: 2rem;
+}
+
+.nav-text {
+  font-size: 24px;
+}
+.header-text {
+  font-size: 40px;
+}
+
+.subheader-text{
+  font-size: 32px;
+}
+
+#home-button, #favorites-button {
+  font-size: 24px;
+}
+
+#submit-name{
+  font-size: 24px;
+  margin: 0px auto;
+  padding: 15px 60px;
+}
+
+#user-name {
+  height: 40px;
+  font-size: 30px;
+}
+
+.movie-poster {
+  width: 50%;
+  margin: 0px auto;
+}
+
+.desc-img {
+  width: 100%;
+  margin: 0px auto;
 }
 }
 
@@ -239,6 +280,37 @@ nav{
 #favorites-button{
   right: 2rem;
 }
+
+.nav-text {
+  font-size: 24px;
+}
+.header-text {
+  font-size: 40px;
+}
+
+.subheader-text{
+  font-size: 32px;
+}
+
+#home-button, #favorites-button {
+  font-size: 24px;
+}
+
+#submit-name{
+  font-size: 24px;
+  margin: 0px auto;
+  padding: 15px 60px;
+}
+
+.movie-poster {
+  display: flex;
+  margin: 0px auto;
+  width: 50%;
+}
+
+.desc-img {
+  width: 100%;
+}
 }
 
 @media screen and (max-width: 667px) {
@@ -249,7 +321,7 @@ nav{
     height: 375px;
   }
 .center{
-  margin: 20rem 5rem;
+  margin: 7rem 5rem;
 }
 #home-button{
   right: 10rem;
@@ -269,9 +341,6 @@ nav{
   height: 100px;
 }
 
-.container {
-  padding: 0 2rem;
-}
 
 #home-button{
   right: 10rem;
@@ -301,9 +370,14 @@ nav{
   margin: 4rem auto auto 0rem;
 }
 
+.movie-poster {
+  width: 100%;
+}
+
 .desc-img {
-  padding: 3rem 10rem;
-  border-image: 100px;
+  width: 100%;
+  box-sizing: content-box;
+  margin: 0px auto;
 }
 
 #user-name{
@@ -326,6 +400,16 @@ nav{
   padding: 10px 30px;
   margin-bottom: 25px;
 }
+
+.movie-poster {
+  display: flex;
+  margin: 0px auto;
+  width: 100%;
+}
+
+.desc-img {
+  width: 100%;
+}
 }
 
 @media screen and (max-width: 375px){
@@ -336,10 +420,6 @@ nav{
   nav{
   height: 75px;
   position: relative;
-}
-
-.container {
-  padding: 0 1rem;
 }
 
 #home-button{
@@ -398,6 +478,23 @@ nav{
   padding: 10px 30px;
   margin-bottom: 10px;
 }
+.movie-poster {
+  display: flex;
+  margin: 0px auto;
+  width: 100%;
+}
+
+.movie-poster {
+  width: 100%;
+  padding: 0px;
+}
+
+.desc-img {
+  width: 100%;
+  box-sizing: content-box;
+  padding: 0px;
+  margin: 0px auto;
+}
 }
 
 @media screen and (max-width: 320px){
@@ -406,9 +503,7 @@ nav{
   position: relative;
 }
 
-.container {
-  padding: 0 1rem;
-}
+
 
 #home-button{
   right: 7rem;
@@ -442,10 +537,6 @@ nav{
   margin: 10rem auto;
 }
 
-.desc-img {
-  margin-top: 1rem;
-}
-
 #user-name{
   height: 30px;
 }
@@ -465,5 +556,20 @@ nav{
 #return-home, #add-to-favorites-button, #remove-from-favorites-button {
   padding: 10px 30px;
   margin-bottom: 10px;
+}
+.movie-poster {
+  width: 100%;
+  padding: 0px;
+}
+
+.desc-img {
+  width: 100%;
+  box-sizing: content-box;
+  padding: 0px;
+  margin: 0px auto;
+}
+
+.nav-text {
+  font-size: 16px;
 }
 }

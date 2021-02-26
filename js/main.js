@@ -1,3 +1,4 @@
+/* eslint-disable no-global-assign */
 var $viewNodeList = document.getElementsByClassName('view');
 var $username = document.getElementById('user-name');
 var $greeting = document.getElementById('greeting');

@@ -59,7 +59,6 @@ function getMovie(name) {
   xhr.responseType = 'json';
   xhr.send();
   xhr.addEventListener('load', function () {
-    console.log(xhr.response.Title, xhr.response.imdbID);
     if (xhr.response.Genre.split(',')[0] === 'Animation') {
       arrayAnimation.push(xhr.response);
       display('animation', xhr.response);
@@ -232,5 +231,3 @@ window.addEventListener('beforeunload', function (event) {
   var dataJSON = JSON.stringify(data);
   localStorage.setItem('movie', dataJSON);
 });
-
-console.log(arrayDocumentary);

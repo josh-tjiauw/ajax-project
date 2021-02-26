@@ -1,5 +1,5 @@
 nav{
-  background-color: gray;
+  background-color: black;
   position: relative;
 }
 
@@ -21,6 +21,7 @@ nav{
 
 .header-text, .subheader-text, .nav-text{
   font-family: 'Balsamiq Sans', cursive;
+  color: white;
 }
 
 .nav-text {
@@ -37,7 +38,8 @@ nav{
 #home-button, #favorites-button {
   border: none;
   font-family: 'Balsamiq Sans', cursive;
-  background-color: gray;
+  background-color: black;
+  color: white;
   height: 100%;
 }
 
@@ -114,7 +116,6 @@ nav{
 
 @media screen and (max-width: 320px){
   nav{
-  background-color: gray;
   height: 75px;
   position: relative;
 }
@@ -183,7 +184,6 @@ nav{
 
 @media screen and (min-width: 375px){
   nav{
-  background-color: gray;
   height: 75px;
   position: relative;
 }

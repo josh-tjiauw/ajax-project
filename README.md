@@ -6,24 +6,25 @@ Check out my demonstration video [here!](https://www.youtube.com/watch?v=Ck2nSHm
 
 Current Feature List:
 
-User can input and see their naem on the home page's greeting section.
-User can navigate to the home page and favorites page in the navbar.
-User can browse the action genre movies.
-User can view the movie's image, title, ratings, length, and description.
-User can add a movie to their favorites list.
-User can remove a movie from their favorites list.
+User can input and see their naem on the home page's greeting section.<br />
+User can navigate to the home page and favorites page in the navbar.<br />
+User can browse the action genre movies.<br />
+User can view the movie's image, title, ratings, length, and description.<br />
+User can add a movie to their favorites list.<br />
+User can remove a movie from their favorites list.<br />
+
 Planned additions:
 
 User can browse more genres other than action. (:white_check_mark:) </br>
-Implement a carousel effect so that more than 4 movies can fit within a genre.
+Implement a carousel effect so that more than 4 movies can fit within a genre.<br />
 
 What I learned from working on this project:
 
-Building my own FIGMA wireframe.
-Planning the issues, and the functionality that goes into a certain implementation idea.
-Finding and implementing API keys from an external site.
-Using XHR (XMLHttpRequest) and the request in order to input data and create jQueries based on the response given.
-Making a "data unavailable" page whenever the user has not put any movies in the favorites section.
+Building my own FIGMA wireframe.<br />
+Planning the issues, and the functionality that goes into a certain implementation idea.<br />
+Finding and implementing API keys from an external site.<br />
+Using XHR (XMLHttpRequest) and the request in order to input data and create jQueries based on the response given.<br />
+Making a "data unavailable" page whenever the user has not put any movies in the favorites section.<br />
 
 ![Login Page](/images/ss1.png)
 ![Home Page](/images/home.png)

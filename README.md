@@ -4,28 +4,30 @@ An application written in HTML, CSS, and JavaScript implementing AJAX functions 
 
 Check out my demonstration video [here!](https://www.youtube.com/watch?v=Ck2nSHmCJkI&feature=youtu.be)
 
-Current Feature List:
+## Current Feature List:
+<ul>
+  <li>User can input and see their naem on the home page's greeting section.</li>
+  <li>User can navigate to the home page and favorites page in the navbar.</li>
+  <li>User can browse the action genre movies.</li>
+  <li>User can view the movie's image, title, ratings, length, and description.</li>
+  <li>User can add a movie to their favorites list.</li>
+  <li>User can remove a movie from their favorites list.</li>
+</ul>
 
-User can input and see their naem on the home page's greeting section.<br />
-User can navigate to the home page and favorites page in the navbar.<br />
-User can browse the action genre movies.<br />
-User can view the movie's image, title, ratings, length, and description.<br />
-User can add a movie to their favorites list.<br />
-User can remove a movie from their favorites list.<br />
+## Planned additions:
+<ul>
+  <li>User can browse more genres other than action. (:white_check_mark:)</li>
+  <li>Implement a carousel effect so that more than 4 movies can fit within a genre.</li>
+</ul>
 
-Planned additions:
-
-User can browse more genres other than action. (:white_check_mark:) </br>
-Implement a carousel effect so that more than 4 movies can fit within a genre.<br />
-
-What I learned from working on this project:
-
-Building my own FIGMA wireframe.<br />
-Planning the issues, and the functionality that goes into a certain implementation idea.<br />
-Finding and implementing API keys from an external site.<br />
-Using XHR (XMLHttpRequest) and the request in order to input data and create jQueries based on the response given.<br />
-Making a "data unavailable" page whenever the user has not put any movies in the favorites section.<br />
-
+## What I learned from working on this project:
+<ul>
+  <li>Building my own FIGMA wireframe.</li>
+  <li>Planning the issues, and the functionality that goes into a certain implementation idea.</li>
+  <li>Finding and implementing API keys from an external site.</li>
+  <li>Using XHR (XMLHttpRequest) and the request in order to input data and create jQueries based on the response given.</li>
+  <li>Making a "data unavailable" page whenever the user has not put any movies in the favorites section.</li>
+</ul>
 ![Login Page](/images/ss1.png)
 ![Home Page](/images/home.png)
 ![Descriptions Page](images/description.png)

@@ -31,7 +31,7 @@ Check out my demonstration video [here!](https://www.youtube.com/watch?v=Ck2nSHm
 
 ## Preview Images
 Login Page <br />
-![Login Page](/images/home.png)<br />
+![Login Page](/images/home.png "Login Page")<br />
 Category Page
 ![Category Page](/images/category.png)
 Movie Description Page

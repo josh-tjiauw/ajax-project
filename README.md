@@ -28,8 +28,10 @@ Check out my demonstration video [here!](https://www.youtube.com/watch?v=Ck2nSHm
   <li>Using XHR (XMLHttpRequest) and the request in order to input data and create jQueries based on the response given.</li>
   <li>Making a "data unavailable" page whenever the user has not put any movies in the favorites section.</li>
 </ul>
+
+## Preview Images
 ![Login Page](/images/home.png)
 ![Category Page](/images/category.png)
-![Descriptions Page](images/moviedescription.png)
+![Descriptions Page](/images/moviedescription.png)
 ![Empty Favorites Page](/images/emptyfavorites.png)
 ![Favorites Page](images/favoriteslist.png)

@@ -32,11 +32,11 @@ Check out my demonstration video [here!](https://www.youtube.com/watch?v=Ck2nSHm
 ## Preview Images
 Login Page <br />
 ![Login Page](/images/home.png "Login Page")<br />
-Category Page
-![Category Page](/images/category.png)
-Movie Description Page
-![Descriptions Page](/images/moviedescription.png)
-Empty Favorites Page
-![Empty Favorites Page](/images/emptyfavorites.png)
-Filled Favorites Page
-![Favorites Page](images/favoriteslist.png)
+Category Page<br />
+![Category Page](/images/category.png "Category Page")<br />
+Movie Description Page<br />
+![Descriptions Page](/images/moviedescription.png "Movie Description Page")<br />
+Empty Favorites Page<br />
+![Empty Favorites Page](/images/emptyfavorites.png "Empty Favorites Page")<br />
+Filled Favorites Page<br />
+![Favorites Page](images/favoriteslist.png "Filled Favorites Page")<br />

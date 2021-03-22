@@ -30,8 +30,13 @@ Check out my demonstration video [here!](https://www.youtube.com/watch?v=Ck2nSHm
 </ul>
 
 ## Preview Images
+Login Page
 ![Login Page](/images/home.png)
+Category Page
 ![Category Page](/images/category.png)
+Movie Description Page
 ![Descriptions Page](/images/moviedescription.png)
+Empty Favorites Page
 ![Empty Favorites Page](/images/emptyfavorites.png)
+Filled Favorites Page
 ![Favorites Page](images/favoriteslist.png)

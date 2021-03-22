@@ -2,7 +2,7 @@
 
 An application written in HTML, CSS, and JavaScript implementing AJAX functions to send and receive information from the OMDb (Open Movie Database) API to obtain a chosen movie's image, ratings, length, and plot description. The user is able to see a variety of movies in a specific genre, and append that movie to their favorites list if they choose to re-watch the movie in the future.
 
-Check out my demonstration video [here!](https://www.youtube.com/watch?v=Ck2nSHmCJkI&feature=youtu.be)
+Check out my demonstration video [here!](https://youtu.be/Ck2nSHmCJkI)
 
 ## Current Feature List:
 <ul>
